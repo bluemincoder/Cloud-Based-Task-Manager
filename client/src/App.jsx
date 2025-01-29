@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import {
     Navigate,
     Route,
@@ -7,25 +8,28 @@ import {
 } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Sidebar from "./components/Sidebar";
 import Tasks from "./pages/Tasks";
 import Users from "./pages/Users";
 import Trash from "./pages/Trash";
 import TaskDetails from "./pages/TaskDetails";
+// import Navbar from "./components/Navbar";
 import {Toaster} from "sonner";
 
 function Layout() {
-    const user = "";
+    // const user = "";
+    const { user } = useSelector((state) => state.auth);
 
     const location = useLocation();
 
     return user ? (
         <div className="w-full h-screen flex flex-col md:flex-row">
             <div className="w-1/5 b-screen bg-white top-0 hidden md:block">
-                {/* <Sidebar /> */}
+                <Sidebar />
             </div>
             {/* <MobileSidebar /> */}
             <div className="flex-1 overflow-y-auto">
-                <Navbar />
+                {/* <Navbar /> */}
             </div>
             <div className="p-4 2xl:px-10">
                 <Outlet />
@@ -53,7 +57,6 @@ function App() {
                 </Route>
                 <Route path="/log-in" element={<Login />} />
             </Routes>
-
             <Toaster richColors />
         </main>
     );
