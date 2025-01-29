@@ -21,7 +21,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^6.28.2",
     "recharts": "^2.15.1",
-    "sonner": "^1.7.2"
+    "sonner": "^1.7.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
