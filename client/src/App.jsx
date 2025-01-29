@@ -15,6 +15,8 @@ import Users from "./pages/Users";
 import Dashboard from "./pages/dashboard";
 import { setOpenSidebar } from "./redux/slices/authSlice";
 
+
+
 function Layout() {
   const { user } = useSelector((state) => state.auth);
 
@@ -72,10 +74,10 @@ const MobileSidebar = () => {
             onClick={() => closeSidebar()}
           >
             <div className='bg-white w-3/4 h-full'>
-              <div className='w-full flex justify-end px-5 mt-5'>
+              <div className='w-full flex justify-end px-5 mt-0'>
                 <button
                   onClick={() => closeSidebar()}
-                  className='flex justify-end items-end'
+                  className='flex justify-end items-end mt-5'
                 >
                   <IoClose size={25} />
                 </button>
