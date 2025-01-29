@@ -5,6 +5,7 @@ import {
     MdKeyboardArrowUp,
     MdKeyboardDoubleArrowUp,
 } from "react-icons/md";
+import { BsDash } from "react-icons/bs";
 import { ClipboardEdit } from "lucide-react";
 import { FaNewspaper, FaUsers } from "react-icons/fa";
 import { FaArrowsToDot } from "react-icons/fa6";
@@ -20,6 +21,7 @@ const TaskTable = ({ tasks }) => {
         high: <MdKeyboardDoubleArrowUp />,
         medium: <MdKeyboardArrowUp />,
         low: <MdKeyboardArrowDown />,
+        normal: <BsDash />,
     };
 
     const TableHeader = () => (

@@ -387,7 +387,7 @@ export const summary = {
       _id: "65c3c21f55ae9b2f7666e86c",
       title: "Duplicate - Website Project Proposal",
       date: "2024-02-07T17:46:56.040Z",
-      priority: "normal",
+      priority: "low",
       stage: "todo",
       assets: [],
       team: [
@@ -474,7 +474,7 @@ export const summary = {
       _id: "65c351b976ed5c48f9440947",
       title: "Website Project Proposal",
       date: "2024-02-07T00:00:00.000Z",
-      priority: "high",
+      priority: "normal",
       stage: "todo",
       assets: [],
       team: [
