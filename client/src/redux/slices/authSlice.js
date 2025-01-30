@@ -2,11 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 import { user } from "../../assets/data";
 
 const initialState = {
-  user: localStorage.getItem("userInfo")
-    ? JSON.parse(localStorage.getItem("userInfo"))
-    : user,
-
-  isSidebarOpen: false,
+    user: (() => {
+        try {
+            const storedUser = localStorage.getItem("userInfo");
+            return storedUser ? JSON.parse(storedUser) : user;
+        } catch (error) {
+            console.error("Error parsing userInfo from localStorage:", error);
+            localStorage.removeItem("userInfo"); // Remove invalid data
+            return user;
+        }
+    })(),
+    isSidebarOpen: false,
 };
 
 const authSlice = createSlice({
