@@ -4,7 +4,7 @@ import express from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import dbconnection from "./utils/index.js";
-import { errorHandler, routeNotFound } from "./middlewares/errorMiddlewares.js";
+import { errorHandler, routeNotFound } from "./middlewares/errorMiddleware.js";
 
 // const routes = "";
 
