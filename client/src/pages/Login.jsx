@@ -3,7 +3,10 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Textbox from "../components/Textbox";
 import Button from "../components/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useLoginMutation } from "../redux/slices/api/authApiSlice";
+import { setCredentials } from "../redux/slices/authSlice";
+import Loading from "../components/Loader";
 
 const Login = () => {
     const { user } = useSelector((state) => state.auth);
@@ -14,9 +17,20 @@ const Login = () => {
     } = useForm();
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [login, { isLoading }] = useLoginMutation();
 
     const submitHandler = async (data) => {
-        console.log("submit");
+        try {
+            const result = await login(data).unwrap();
+            console.log(result);
+
+            dispatch(setCredentials(result));
+            navigate("/dashboard");
+        } catch (error) {
+            console.log(error);
+            toast.error(error?.data?.message || error.message);
+        }
     };
 
     useEffect(() => {
@@ -90,11 +104,15 @@ const Login = () => {
                                 Forget Password?
                             </span>
 
-                            <Button
-                                type="submit"
-                                label="Submit"
-                                className="w-full h-10 bg-blue-700 text-white rounded-full"
-                            />
+                            {isLoading ? (
+                                <Loading />
+                            ) : (
+                                <Button
+                                    type="submit"
+                                    label="Submit"
+                                    className="w-full h-10 bg-blue-700 text-white rounded-full"
+                                />
+                            )}
                         </div>
                     </form>
                 </div>
