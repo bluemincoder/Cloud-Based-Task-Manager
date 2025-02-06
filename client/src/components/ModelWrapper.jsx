@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useRef } from "react";
 
-const ModalWrapper = ({ open, setOpen, children }) => {
+const ModelWrapper = ({ open, setOpen, children }) => {
   const cancelButtonRef = useRef(null);
 
   return (
@@ -52,4 +52,4 @@ const ModalWrapper = ({ open, setOpen, children }) => {
   );
 };
 
-export default ModalWrapper;
+export default ModelWrapper;
