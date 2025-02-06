@@ -89,7 +89,7 @@ export function UserAction({ open, setOpen, onClick = () => {} }) {
 
                     <p className="text-center text-gray-500">
                         {
-                            "Are you sure you want to activate or deactive this account?"
+                            "Are you sure you want to activate or deactivate this account?"
                         }
                     </p>
 

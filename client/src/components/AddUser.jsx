@@ -29,7 +29,7 @@ const AddUser = ({ open, setOpen, userData }) => {
         //used to create and update user
         try {
             if (userData) {
-                console.log("Submitting data:", data);
+                // console.log("Submitting data:", data);
                 const result = await updateUser(data).unwrap();
                 // console.log("Update result:", result);
 

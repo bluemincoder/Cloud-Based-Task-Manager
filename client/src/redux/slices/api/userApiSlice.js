@@ -43,7 +43,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
         method: "GET",
         credentials: "include",
       }),
-    }),
+    }), 
 
     markNotiAsRead: builder.mutation({
       query: (data) => ({
