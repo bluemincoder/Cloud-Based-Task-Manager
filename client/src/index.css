@@ -126,3 +126,14 @@
     box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
   }
 }
+
+/* Customize toast width and height */
+[data-sonner-toast] {
+  max-width: 400px !important;
+  min-height: 50px !important; 
+  padding: 16px !important; 
+  display: flex;
+  align-items: center; 
+  text-size-adjust: 1.5rem;
+}
+

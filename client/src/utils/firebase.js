@@ -1,17 +1,21 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: "task-manager-c35d7.firebaseapp.com",
-    projectId: "task-manager-c35d7",
-    storageBucket: "task-manager-c35d7.firebasestorage.app",
-    messagingSenderId: "139764539583",
-    appId: "1:139764539583:web:3671c1849eb60fbe43e60a",
+  apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
+  authDomain: "taskmanager-510.firebaseapp.com",
+  projectId: "taskmanager-510",
+  storageBucket: "taskmanager-510.appspot.com",
+  messagingSenderId: "157176218519",
+  appId: "1:157176218519:web:53a5d087a0e879ce2d7ad2",
+  measurementId: "G-564TFE35EX",
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);

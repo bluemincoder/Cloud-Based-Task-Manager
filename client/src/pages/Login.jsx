@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLoginMutation } from "../redux/slices/api/authApiSlice";
 import { setCredentials } from "../redux/slices/authSlice";
 import Loading from "../components/Loader";
+import { toast } from "sonner";
 
 const Login = () => {
     const { user } = useSelector((state) => state.auth);
@@ -27,6 +28,7 @@ const Login = () => {
 
             dispatch(setCredentials(result));
             navigate("/dashboard");
+            toast.success("Login successful");
         } catch (error) {
             console.log(error);
             toast.error(error?.data?.message || error.message);

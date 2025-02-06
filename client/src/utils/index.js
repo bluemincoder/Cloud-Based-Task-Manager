@@ -1,3 +1,16 @@
+export function getInitials(fullName) {
+  if (fullName != null) {
+    const names = fullName.split(" ");
+
+    const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
+
+    const initialsStr = initials.join("");
+
+    return initialsStr;
+  }
+  return "PN";
+}
+
 export const formatDate = (date) => {
   // Get the month, day, and year
   const month = date.toLocaleString("en-US", { month: "short" });
@@ -8,6 +21,10 @@ export const formatDate = (date) => {
 
   return formattedDate;
 };
+
+// export function getInitials(fullName) {
+//   return "PN" || fullName[0];
+// }
 
 export function dateFormatter(dateString) {
   const inputDate = new Date(dateString);
@@ -24,21 +41,10 @@ export function dateFormatter(dateString) {
   return formattedDate;
 }
 
-export function getInitials(fullName) {
-  const names = fullName.split(" ");
-
-  const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
-
-  const initialsStr = initials.join("");
-
-  return initialsStr;
-}
-
 export const PRIOTITYSTYELS = {
   high: "text-red-600",
   medium: "text-yellow-600",
-  normal: "text-blue-600",
-  low: "text-green-600",
+  low: "text-blue-600",
 };
 
 export const TASK_TYPE = {

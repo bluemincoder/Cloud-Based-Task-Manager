@@ -7,6 +7,7 @@ import { getInitials } from "../utils";
 import clsx from "clsx";
 import ConfirmatioDialog, { UserAction } from "../components/Dialogs";
 import AddUser from "../components/AddUser";
+import { toast } from "sonner";
 
 const Users = () => {
     const [openDialog, setOpenDialog] = useState(false);
@@ -25,6 +26,7 @@ const Users = () => {
     const editClick = (el) => {
         setSelected(el);
         setOpen(true);
+        toast.success("Edit user");
     };
 
     const TableHeader = () => (
