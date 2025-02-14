@@ -1,8 +1,12 @@
+//whenever a add substask button is clicked there will pop up of box these code is used there
+
 import { useForm } from "react-hook-form";
 import ModelWrapper from "../ModelWrapper";
 import { Dialog } from "@headlessui/react";
 import Textbox from "../Textbox";
 import Button from "../Button";
+import { useCreateSubTaskMutation } from "../../redux/slices/api/taskApiSlice";
+import { toast } from "sonner";
 
 const AddSubTask = ({ open, setOpen, id }) => {
     const {
@@ -11,19 +15,19 @@ const AddSubTask = ({ open, setOpen, id }) => {
         formState: { errors },
     } = useForm();
 
-    // const [addSbTask] = useCreateSubTaskMutation();
+    const [addSubTask] = useCreateSubTaskMutation();
 
     const handleOnSubmit = async (data) => {
-        // try {
-        //   const res = await addSbTask({ data, id }).unwrap();
-        //   toast.success(res.message);
-        //   setTimeout(() => {
-        //     setOpen(false);
-        //   }, 500);
-        // } catch (err) {
-        //   console.log(err);
-        //   toast.error(err?.data?.message || err.error);
-        // }
+        try {
+            const res = await addSubTask({ data, id }).unwrap();
+            toast.success(res.message);
+            setTimeout(() => {
+                setOpen(false);
+            }, 500);
+        } catch (err) {
+            console.log(err);
+            toast.error(err?.data?.message || err.error);
+        }
     };
 
     return (
