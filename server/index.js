@@ -18,7 +18,7 @@ app.use(
         origin: [
             "http://localhost:3000",
             "http://localhost:3001",
-            "https://managix.vercel.app",
+            "https://managix-git-main-bluemins-projects-7700be1e.vercel.app,
         ],
         methods: ["GET", "POST", "DELETE", "PUT"],
         credentials: true,
