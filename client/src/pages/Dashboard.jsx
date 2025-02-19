@@ -135,11 +135,10 @@ const UserTable = ({ users }) => {
             <td>
                 <p
                     className={clsx(
-                        "w-fit px-3 py-1 rounded-full text-sm",
-                        user?.isActive ? "bg-blue-200" : "bg-yellow-100"
+                        "w-fit px-3 py-1 rounded-full text-sm bg-blue-200",
                     )}
                 >
-                    {user?.isActive ? "Active" : "Disabled"}
+                    {user?.isActive ? "Active" : "Active"}
                 </p>
             </td>
             <td className="py-2 text-sm">

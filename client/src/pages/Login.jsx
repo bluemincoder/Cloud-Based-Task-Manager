@@ -8,6 +8,7 @@ import { useLoginMutation } from "../redux/slices/api/authApiSlice";
 import { setCredentials } from "../redux/slices/authSlice";
 import Loading from "../components/Loader";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const { user } = useSelector((state) => state.auth);
@@ -115,6 +116,16 @@ const Login = () => {
                                 />
                             )}
                         </div>
+                        {/* Register Link */}
+                        <p className="text-center text-gray-700">
+                            Don't have an account?{" "}
+                            <Link
+                                to="/register"
+                                className="text-blue-600 hover:underline"
+                            >
+                                Register here
+                            </Link>
+                        </p>
                     </form>
                 </div>
             </div>
