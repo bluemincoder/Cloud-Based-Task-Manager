@@ -18,12 +18,14 @@ app.use(
         origin: [
             "http://localhost:3000",
             "http://localhost:3001",
-            "https://managix-git-main-bluemins-projects-7700be1e.vercel.app,
+            "https://managix.vercel.app",
         ],
         methods: ["GET", "POST", "DELETE", "PUT"],
+        allowedHeaders: ["Content-Type", "Authorization"],
         credentials: true,
     })
 );
+
 app.get("/", (req, res) => {
     res.status(200).json({ message: "Welcome to the API!" });
 });
